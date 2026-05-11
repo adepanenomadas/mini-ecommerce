@@ -57,10 +57,13 @@ The app will be available at: **[http://localhost:8000](http://localhost:8000)**
 
 ## 🛠 Testing Tools & Access
 
-### 1. Web Interface (UI)
-- **Home:** `http://localhost:8000`
-- **Shopping Cart:** `http://localhost:8000/cart`
-- **Default Credentials:** `admin@example.com` / `password`
+### 1. Web Interface (UI) & Login
+To access the protected areas of the application (like the Dashboard or Cart), you can use the following default account:
+- **URL:** `http://localhost:8000`
+- **Email:** `admin@example.com`
+- **Password:** `password`
+
+Once logged in, you can navigate to the **Shopping Cart** at: `http://localhost:8000/cart`
 
 ### 2. API Endpoints
 You can test these using Postman, Insomnia, or `curl`:
