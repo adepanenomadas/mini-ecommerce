@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Cart;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,8 +20,8 @@ class CartFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => \App\Models\User::factory(),
-            'product_id' => \App\Models\Product::factory(),
+            'user_id' => User::factory(),
+            'product_id' => Product::factory(),
             'quantity' => $this->faker->numberBetween(1, 5),
         ];
     }

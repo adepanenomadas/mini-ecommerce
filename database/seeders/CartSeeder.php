@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Cart;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class CartSeeder extends Seeder
@@ -12,15 +14,15 @@ class CartSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = \App\Models\User::all();
-        $products = \App\Models\Product::all();
+        $users = User::all();
+        $products = Product::all();
 
         if ($users->isEmpty() || $products->isEmpty()) {
             return;
         }
 
         foreach ($users as $user) {
-            \App\Models\Cart::factory()->count(rand(1, 3))->create([
+            Cart::factory()->count(rand(1, 3))->create([
                 'user_id' => $user->id,
                 'product_id' => $products->random()->id,
             ]);
